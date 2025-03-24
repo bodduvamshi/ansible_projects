@@ -1,0 +1,32 @@
+# install nginx and update system (-b)
+---
+- name: update n1 server
+  hosts: n1
+  become: yes
+
+  tasks:
+    - name: update port
+      copy:
+        src: nginx.conf
+        dest: /etc/nginx/sites-enabled/default
+
+
+    - name: restart nginx
+      service:
+        name: nginx
+        state:  restarted
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
