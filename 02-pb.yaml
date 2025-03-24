@@ -1,0 +1,46 @@
+#create files in directory
+---
+- name: update n1 server
+  hosts: n1
+
+  tasks:
+    -name: create directory
+    file:
+      path: /home/ubuntu/playbook_test_n2
+      state: directory
+    -name: create directory
+    file:
+      path: /home/ubuntu/playbook_test_n2/hello.txt
+      state: touch
+
+#create files in directory
+
+- name: update n1 server
+  hosts: n1
+
+  tasks:
+    -name: create directory
+    file:
+      path: /home/ubuntu/playbook_test_n1
+      state: directory
+    -name: create directory
+    file:
+      path: /home/ubuntu/playbook_test_n1/hello.txt
+      state: touch
+
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

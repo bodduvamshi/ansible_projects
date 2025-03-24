@@ -1,0 +1,31 @@
+# install nginx and update system (-b)
+---
+- name: update n1 server
+  hosts: n1
+  become: yes
+
+  tasks:
+    -name: update system
+     apt:
+      update_cache: yes
+    
+    -name: install nginx
+     apt:
+      name: nginx
+      state: present
+         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

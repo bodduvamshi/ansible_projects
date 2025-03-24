@@ -1,0 +1,28 @@
+#create directory
+---
+- name: update n1 server
+  hosts: n1
+
+  tasks:
+    -name: create directory
+    file:
+      path: /home/ubuntu/playbook_test
+      state: directory
+
+
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

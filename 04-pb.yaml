@@ -1,0 +1,32 @@
+# install nginx and update system (-b)
+---
+- name: update n1 server
+  hosts: n1
+  become: yes
+
+  tasks:
+    - name: remove temp file
+      file:
+        state: absent
+        path: /var/www/html/index.nginx-debian.html
+
+
+    - name: deply app
+      git:
+        repo: https://github.com/ravi2krishna/lms-730-am.git
+        dest:   /var/www/html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
