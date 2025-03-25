@@ -8,49 +8,49 @@
     - name: update system
       apt:
         update_cache: yes
-      when: ansible-distribution == "Ubuntu"
+      when: ansible_distribution == "Ubuntu"
 
     - name: install nginx
       apt:
         name: nginx
         state: present
-      when: ansible-distribution == "Ubuntu"
+      when: ansible_distribution == "Ubuntu"
 
     - name: restart nginx
       service:
         name: nginx
         state:  restarted
-      when: ansible-distribution == "Ubuntu"
+      when: ansible_distribution == "Ubuntu"
 
     - name: install httpd
       yum:
         name: httpd
         state: present
-      when: ansible-distribution == "Amazon"
+      when: ansible_distribution == "Amazon"
 
     - name: start httpd
       service:
         name: httpd
         state:  started
-      when: ansible-distribution == "Amazon"
+      when: ansible_distribution == "Amazon"
 
     - name: enable httpd
       service:
         name: httpd
         enabled:  yes
-      when: ansible-distribution == "Amazon"
+      when: ansible_distribution == "Amazon"
 
     - name: install git
       yum:
         name: git
         state: present
-      when: ansible-distribution == "Amazon"
+      when: ansible_distribution == "Amazon"
 
     - name: remove temp file
       file:
         state: absent
         path: /var/www/html/index.nginx-debian.html
-      when: ansible-distribution == "Ubuntu"
+      when: ansible_distribution == "Ubuntu"
 
     - name: deply app
       git:
